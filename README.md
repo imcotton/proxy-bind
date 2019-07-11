@@ -35,6 +35,14 @@ or
 
     const { bind, bond } = require('proxy-bind');
 
+or
+
+```html
+<script type="module">
+    import { bind, bond } from 'https://cdn.jsdelivr.net/npm/proxy-bind@1.x/index.mjs';
+</script>
+```
+
 > the `bond` is only an alias to avoid naming conflict, just in case.
 
 

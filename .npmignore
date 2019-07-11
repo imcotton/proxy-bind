@@ -1,0 +1,17 @@
+.DS_Store
+*.log
+*.tgz
+
+.editorconfig
+rollup.config.js
+tsconfig.json
+jest.config.js
+junit.xml
+
+.vscode/
+.github/
+lib/
+tmp/
+test/
+coverage/
+

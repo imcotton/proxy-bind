@@ -1,0 +1,36 @@
+{
+  "name": "proxy-bind",
+  "version": "1.0.0",
+  "description": "foobar.fn.bind(foobar) -> bind(foobar).fn",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "rollup -c && tsc --emitDeclarationOnly",
+    "ver": "echo \"$npm_package_name@$npm_package_version\"",
+    "test": "jest --ci --coverage"
+  },
+  "keywords": [
+    "proxy",
+    "bind"
+  ],
+  "author": "Cotton Hou <himcotton@gmail.com>",
+  "repository": "imcotton/proxy-bind",
+  "homepage": "https://github.com/imcotton/proxy-bind#readme",
+  "bugs": {
+    "url": "https://github.com/imcotton/proxy-bind/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "jest": "^24.8.0",
+    "jest-junit": "^6.4.0",
+    "rollup": "^1.16.7",
+    "rollup-plugin-typescript": "^1.0.1",
+    "ts-jest": "^24.0.2",
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.3"
+  }
+}

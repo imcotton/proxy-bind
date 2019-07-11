@@ -47,16 +47,10 @@ action "Tag Check: version" {
   args = "tag v/*"
 }
 
-action "NPM Pack" {
-  uses = "actions/npm@master"
-  needs = "Tag Check: version"
-  args = "pack"
-}
-
 action "NPM Push" {
   uses = "actions/npm@master"
-  needs = "NPM Pack"
-  args = "publish *.tgz --tag=next"
+  needs = "Tag Check: version"
+  args = "publish --tag=next"
   secrets = ["NPM_AUTH_TOKEN"]
 }
 

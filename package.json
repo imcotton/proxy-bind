@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "foobar.fn.bind(foobar) -> bind(foobar).fn",
   "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "index.cjs",
+  "module": "index.mjs",
+  "types": "index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "build": "rollup -c && tsc --emitDeclarationOnly",
-    "ver": "echo \"$npm_package_name@$npm_package_version\"",
+    "prepublishOnly": "mv ./dist/* ./",
+    "build": "rollup -c --environment OUT:./dist && tsc --emitDeclarationOnly",
+    "ver": "echo \"${npm_package_name}@${npm_package_version}\"",
     "test": "jest --ci --coverage"
   },
   "keywords": [

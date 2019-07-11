@@ -11,6 +11,7 @@ junit.xml
 .vscode/
 .github/
 lib/
+dist/
 tmp/
 test/
 coverage/

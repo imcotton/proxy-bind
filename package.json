@@ -1,6 +1,6 @@
 {
   "name": "proxy-bind",
-  "version": "1.0.0",
+  "version": "1.0.1-0",
   "description": "foobar.fn.bind(foobar) -> bind(foobar).fn",
   "type": "module",
   "main": "index.cjs",

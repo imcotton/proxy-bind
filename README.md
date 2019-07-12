@@ -31,7 +31,7 @@ bind(foobar).fn
 
     import { bind, bond } from 'proxy-bind';
 
-or
+.
 
     const { bind, bond } = require('proxy-bind');
 
@@ -40,6 +40,14 @@ or
 ```html
 <script type="module">
     import { bind, bond } from 'https://cdn.jsdelivr.net/npm/proxy-bind@1.x/index.mjs';
+</script>
+```
+.
+```html
+<script type="javascript">
+    (async () => {
+        const { bind, bond } = await import('https://cdn.jsdelivr.net/npm/proxy-bind@1.x/index.mjs');
+    })();
 </script>
 ```
 

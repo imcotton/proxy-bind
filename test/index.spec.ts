@@ -99,5 +99,28 @@ describe('proxy-bind', () => {
 
     });
 
+    test('instance bond Class', () => {
+
+        class Shape {
+
+            readonly name = 'raw';
+
+            constructor () {
+                return bind(this);
+            }
+
+            draw () {
+                return `->${ this.name }<-`;
+            }
+
+        }
+
+        const { draw, name } = new Shape();
+
+        expect(name).toEqual('raw');
+        expect(draw).not.toThrowError(TypeError);
+
+    });
+
 });
 

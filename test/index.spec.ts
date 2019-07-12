@@ -38,9 +38,7 @@ describe('proxy-bind', () => {
 
         expect(cb).toBeCalledWith(42);
 
-        const thenFn = promise.then;
-
-        expect(() => thenFn()).toThrowError(TypeError);
+        expect(promise.then).toThrowError(TypeError);
 
     });
 
@@ -56,9 +54,7 @@ describe('proxy-bind', () => {
         expect(() => add(9)).not.toThrow();
         expect(set.size).toEqual(4);
 
-        const clear = set.clear;
-
-        expect(() => clear()).toThrowError(TypeError);
+        expect(set.clear).toThrowError(TypeError);
 
     });
 
@@ -72,9 +68,7 @@ describe('proxy-bind', () => {
         expect(arrP.length).toEqual(arr.length);
         expect(push(4)).toEqual(arr.length);
 
-        const pop = arr.pop;
-
-        expect(() => pop()).toThrowError(TypeError);
+        expect(arr.pop).toThrowError(TypeError);
 
     });
 
@@ -101,9 +95,7 @@ describe('proxy-bind', () => {
 
         expect(drawB()).toEqual(drawP());
 
-        const draw = shape.draw;
-
-        expect(() => draw()).toThrowError(TypeError);
+        expect(shape.draw).toThrowError(TypeError);
 
     });
 

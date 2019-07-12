@@ -99,6 +99,35 @@ describe('proxy-bind', () => {
 
     });
 
+    test('instance inherited Class', () => {
+
+        class User {
+
+            protected role = 'normal';
+
+            getRole () {
+                return this.role;
+            }
+
+        }
+
+        class SuperUser extends User {
+
+            protected role = 'admin';
+
+        }
+
+        const admin = new SuperUser();
+
+        const { getRole } = bind(admin);
+
+        expect(getRole).not.toThrowError(TypeError);
+        expect(admin.getRole).toThrowError(TypeError);
+
+        expect(getRole()).toEqual('admin');
+
+    });
+
     test('instance bond Class', () => {
 
         class Shape {

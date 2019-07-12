@@ -6,9 +6,9 @@ export function bind <T extends object> (origin: T) {
 
     return new Proxy(origin, {
 
-        get (target, propKey) {
+        get <K extends keyof T> (target: T, propKey: K) {
 
-            const property = (target as any)[propKey];
+            const property = target[propKey];
 
             if (typeof property === 'function') {
                 return property.bind(target);

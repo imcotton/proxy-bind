@@ -42,6 +42,39 @@ describe('proxy-bind', () => {
 
     });
 
+    test('__proto__ bind', () => {
+
+        const user = {
+
+            name: 'guest',
+
+            getName () {
+                return this.name;
+            },
+
+        };
+
+        const admin: any = {
+
+            name: 'admin',
+
+            __proto__: user,
+
+        };
+
+        expect(admin.getName()).toEqual('admin');
+
+        admin.__proto__ = bind(user);
+
+        expect(admin.getName()).toEqual('admin');
+
+        const { getName } = admin;
+
+        expect(getName).not.toThrowError();
+        expect(getName()).toEqual('admin');
+
+    });
+
     test('instance Set', () => {
 
         const set = new Set([ 1, 2, 3 ]);

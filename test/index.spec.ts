@@ -121,7 +121,7 @@ describe('proxy-bind', () => {
 
         const { getRole } = bind(admin);
 
-        expect(getRole).not.toThrowError(TypeError);
+        expect(getRole).not.toThrow();
         expect(admin.getRole).toThrowError(TypeError);
 
         expect(getRole()).toEqual('admin');
@@ -147,7 +147,7 @@ describe('proxy-bind', () => {
         const { draw, name } = new Shape();
 
         expect(name).toEqual('raw');
-        expect(draw).not.toThrowError(TypeError);
+        expect(draw).not.toThrow();
 
     });
 

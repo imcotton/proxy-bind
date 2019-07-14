@@ -1,17 +1,22 @@
 /// <reference lib="es2015.proxy" />
+/// <reference lib="es2015.reflect" />
 
 
 
 export function bind <T extends object> (origin: T) {
 
-    return new Proxy(origin, {
+    const proxy = new Proxy(origin, {
 
-        get <K extends keyof T> (target: T, propKey: K) {
+        get <K extends keyof T> (target: T, propKey: K, receiver: any) {
 
-            const property = target[propKey];
+            if (receiver === proxy) {
+                receiver = target;
+            }
+
+            const property = Reflect.get(target, propKey, receiver) as unknown;
 
             if (typeof property === 'function') {
-                return property.bind(target);
+                return property.bind(receiver);
             }
 
             return property;
@@ -19,6 +24,8 @@ export function bind <T extends object> (origin: T) {
         },
 
     });
+
+    return proxy;
 
 }
 

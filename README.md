@@ -7,13 +7,13 @@
 
 ## tl;dr
 
-from:
+from
 
 ```javascript
 foobar.fn.bind(foobar)
 ```
 
-to:
+to
 
 ```javascript
 bind(foobar).fn
@@ -57,7 +57,7 @@ or
 
 ## Example
 
-"point-free" ish:
+"point-free" ish
 
 ```javascript
 import { bind } from 'proxy-bind';
@@ -78,7 +78,7 @@ console.log(await resolve(42));  // 42
 console.log(await resolve('foobar'));  // foobar
 ```
 
-bind `this`:
+bind `this`
 
 ```javascript
 import { bind } from 'proxy-bind';
@@ -109,7 +109,7 @@ It uses ES6 `Proxy` to bridge function calls via `Function.prototype.bind`.
 ## Caveat
 
 - Doesn't work on primitive types:
-  - don't: `bind(5)`
+  - don't `bind(5)`
   - do `bind(new Number(5))`
 
 

@@ -10,13 +10,13 @@
 from
 
 ```javascript
-foobar.fn.bind(foobar)
+const fn = foobar.fn.bind(foobar);
 ```
 
 to
 
 ```javascript
-bind(foobar).fn
+const { fn } = bind(foobar);
 ```
 
 

@@ -1,0 +1,37 @@
+name: Latest
+
+
+
+
+
+on:
+  push:
+    branches:
+      - '!*'
+    tags:
+      - lv/*
+
+
+
+
+
+jobs:
+
+  tagging:
+    name: Latest
+    runs-on: ubuntu-18.04
+
+    steps:
+
+      - uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v1
+        with:
+          version: 12.x
+          node-version: 12.x
+          registry-url: https://registry.npmjs.org/
+
+      - run: npm dist-tag add $(npm run -s ver) latest
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+

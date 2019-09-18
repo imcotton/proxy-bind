@@ -1,0 +1,59 @@
+name: Publish
+
+
+
+
+
+on:
+  push:
+    branches:
+      - '!*'
+    tags:
+      - v/*
+
+
+
+
+
+jobs:
+
+  checking:
+    name: Check
+    runs-on: ubuntu-18.04
+
+    steps:
+
+      - uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v1
+        with:
+          version: 12.x
+          node-version: 12.x
+
+      - run: npm install
+      - run: npm run test
+
+
+
+  publishing:
+    name: Publish
+    runs-on: ubuntu-18.04
+    needs: checking
+
+    steps:
+
+      - uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v1
+        with:
+          version: 12.x
+          node-version: 12.x
+          registry-url: https://registry.npmjs.org/
+
+      - run: npm install
+      - run: npm run build
+
+      - run: npm publish --tag=next
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+

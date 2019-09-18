@@ -1,6 +1,7 @@
 # proxy-bind
 
 [![npm version](https://badgen.net/npm/v/proxy-bind)](https://www.npmjs.com/package/proxy-bind)
+[![actions](https://github.com/imcotton/proxy-bind/workflows/Check/badge.svg)](https://github.com/imcotton/proxy-bind/actions)
 [![codecov](https://codecov.io/gh/imcotton/proxy-bind/branch/master/graph/badge.svg)](https://codecov.io/gh/imcotton/proxy-bind)
 
 

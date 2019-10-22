@@ -31,5 +31,11 @@ export function bind <T extends object> (origin: T) {
 
 
 
+export function mirror <T extends object> (origin: T) {
+    return [ origin, bind(origin) ] as const;
+}
+
+
+
 export { bind as bond }
 

@@ -1,4 +1,4 @@
-import { bind, bond } from '../lib';
+import { bind, bond, mirror } from '../lib';
 
 
 
@@ -181,6 +181,22 @@ describe('proxy-bind', () => {
 
         expect(name).toEqual('raw');
         expect(draw).not.toThrow();
+
+    });
+
+    test('mirror', () => {
+
+        const dummy = {
+            name: 'foobar',
+            getName () {
+                return this.name;
+            },
+        };
+
+        const [ origin, { getName } ] = mirror(dummy);
+
+        expect(origin).toBe(dummy);
+        expect(getName()).toBe(dummy.name);
 
     });
 

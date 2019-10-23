@@ -10,7 +10,7 @@
     "prepublishOnly": "mv ./dist/* ./",
     "build": "tsc && rollup -c",
     "ver": "echo ${npm_package_name}@${npm_package_version}",
-    "test": "jest --ci --coverage"
+    "test": "jest --ci --coverage -c jest.config.json"
   },
   "keywords": [
     "proxy",

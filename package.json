@@ -16,6 +16,15 @@
     "proxy",
     "bind"
   ],
+  "files": [
+    "index.js",
+    "index.mjs",
+    "index.d.ts",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "package.json"
+  ],
   "author": "Cotton Hou <himcotton@gmail.com>",
   "repository": "imcotton/proxy-bind",
   "homepage": "https://github.com/imcotton/proxy-bind#readme",

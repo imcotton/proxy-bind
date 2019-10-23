@@ -1,3 +1,12 @@
+<a name="1.2.1"></a>
+## 1.2.1 (2019-10-23)
+
+- using `files` in pkg instead of `.npmignore`
+
+
+
+
+
 <a name="1.2.0"></a>
 ## 1.2.0 (2019-10-23)
 

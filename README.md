@@ -99,6 +99,18 @@ const { greet } = bind(me);
 console.log(greet('bar'));  // Hi bar, this is foo.
 ```
 
+`mirror` helper
+
+```javascript
+import { mirror } from 'proxy-bind';
+
+const [ list, { push } ] = mirror([ 1, 2, 3 ]);
+
+push(4);
+
+console.log(list);  // [1, 2, 3, 4]
+```
+
 
 
 ## Methodology

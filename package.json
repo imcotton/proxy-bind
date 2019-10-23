@@ -2,13 +2,13 @@
   "name": "proxy-bind",
   "version": "1.1.0",
   "description": "foobar.fn.bind(foobar) -> bind(foobar).fn",
-  "main": "index.cjs",
+  "main": "index.js",
   "module": "index.mjs",
   "types": "index.d.ts",
   "sideEffects": false,
   "scripts": {
     "prepublishOnly": "mv ./dist/* ./",
-    "build": "rollup -c --environment OUT:./dist && tsc --emitDeclarationOnly",
+    "build": "tsc && rollup -c",
     "ver": "echo ${npm_package_name}@${npm_package_version}",
     "test": "jest --ci --coverage"
   },
@@ -28,7 +28,6 @@
     "jest": "^24.9.0",
     "jest-junit": "^8.0.0",
     "rollup": "^1.21.4",
-    "rollup-plugin-typescript": "^1.0.1",
     "ts-jest": "^24.1.0",
     "tslib": "^1.10.0",
     "typescript": "~3.6.3"

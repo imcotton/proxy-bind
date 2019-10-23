@@ -4,13 +4,13 @@ import pkg from './package.json';
 
 
 
-const dist = file => `${ process.env.OUT || '.' }/${ file }`;
+const dist = (file = '') => `${ process.env.OUT || './dist' }/${ file }`;
 
 
 
 export default {
 
-    input: './lib/index.ts',
+    input: dist(pkg.main),
 
     output: [
         {
@@ -21,14 +21,6 @@ export default {
             file: dist(pkg.module),
             format: 'esm',
         },
-    ],
-
-    plugins: [
-
-        require('rollup-plugin-typescript')({
-            typescript: require('typescript'),
-        }),
-
     ],
 
 };

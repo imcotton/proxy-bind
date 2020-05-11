@@ -27,8 +27,6 @@ jobs:
       - run: npm install
       - run: npm run test -- --verbose
       - run: npm run build
-
-      - run: npx codecov
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      
+      - uses: codecov/codecov-action@v1
 

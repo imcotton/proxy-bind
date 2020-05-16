@@ -34,6 +34,10 @@ const { fn } = bind(foobar);
 
 .
 
+    import { bind, bond } from 'https://deno.land/x/proxy_bind/mod.ts';
+
+.
+
     const { bind, bond } = require('proxy-bind');
 
 or

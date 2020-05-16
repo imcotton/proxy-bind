@@ -16,6 +16,9 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
   },
+  "include": [
+    "./lib/*.ts",
+  ],
   "exclude": [
     "test/",
     "dist/"

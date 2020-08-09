@@ -28,5 +28,5 @@ jobs:
       - run: npm run test -- --verbose
       - run: npm run build
       
-      - uses: codecov/codecov-action@v1.0.7
+      - uses: codecov/codecov-action@v1
 

@@ -3,7 +3,7 @@
 
 
 
-export function bind <T extends object> (origin: T) {
+export function bind <T extends object> (origin: T): T {
 
     const proxy = new Proxy(origin, {
 
@@ -31,7 +31,7 @@ export function bind <T extends object> (origin: T) {
 
 
 
-export function mirror <T extends object> (origin: T) {
+export function mirror <T extends object> (origin: T): readonly [ T, T ] {
     return [ origin, bind(origin) ] as const;
 }
 
